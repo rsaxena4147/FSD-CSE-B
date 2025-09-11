@@ -64,40 +64,87 @@ function wait() {
 // console.log(new Date().getTime())
 
 
-const register=()=>{
-wait();
+// const register=()=>{
+// wait();
 
-  console.log("Register function called");
+//   console.log("Register function called");
+// }
+
+// const sendEmail=()=>{
+// wait();
+
+//   console.log("sendEMail function called");
+// }
+
+// const login=()=>{
+// wait();
+
+//   console.log("Login function called");
+// }
+
+// const getData=()=>{
+// wait();
+
+//   console.log("getData function called");
+// }
+
+// const displayData=()=>{
+// wait();
+
+//   console.log("displayData function called");
+// }
+
+// register();
+// sendEmail();
+// login();
+// getData();
+// displayData();
+
+// console.log("Other application")
+
+
+
+function register(cb){
+  setTimeout(()=>{
+    console.log("Register Ends");
+    cb();
+  },2000)
 }
 
-const sendEmail=()=>{
-wait();
 
-  console.log("sendEMail function called");
+
+function sendEmail(cb){
+  setTimeout(()=>{
+    console.log("send Email Ends");
+    cb();
+  },2000)
 }
 
-const login=()=>{
-wait();
-
-  console.log("Login function called");
+function login(cb){
+  setTimeout(()=>{
+    console.log("Login Ends");
+    cb();
+  },2000)
 }
 
-const getData=()=>{
-wait();
-
-  console.log("getData function called");
+function getData(cb){
+  setTimeout(()=>{
+    console.log("getData Ends");
+    cb();
+  },2000)
 }
-
-const displayData=()=>{
-wait();
-
-  console.log("displayData function called");
+function displayData(){
+  setTimeout(()=>{
+    console.log("displayData Ends");
+  },2000) 
 }
+register(()=>{
+  sendEmail(()=>{
+    login(()=>{
+      getData(()=>{
+        displayData()
+      })
+    })
+  })
+})
 
-register();
-sendEmail();
-login();
-getData();
-displayData();
-
-console.log("Other application")
