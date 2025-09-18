@@ -44,6 +44,7 @@ function displayData() {
 }
 
 // Chaining with Promises
+// Chaining with Promises
 register()
   .then(sendEmail)
   .then(login)
