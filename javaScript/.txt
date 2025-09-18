@@ -15,7 +15,7 @@
 -> Proxies and Reflect API
 -> Generators and iterators
 -> Error handling with try/catch  
--> Map and Set data structures
+-> Map and Set data structure
 -> Symbol data type
 -> WeakMap and WeakSet
 -> Typed arrays and binary data
