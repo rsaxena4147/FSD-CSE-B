@@ -1,29 +1,61 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import BookCart from "./BookCart";
+import BookCart from "./Component/BookCart";
+import Header from "./Component/Header";
+import Footer from "./Component/Footer";
 import "./App.css";
 function App() {
-  const book1 =
-    "https://imgs.search.brave.com/e8P-mqRtH_KDSXHpKH7Jh696_j1F8dW4v6ii00Uq-ck/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hbHZh/cm90cmlnby5jb20v/YmxvZy9hc3NldHMv/aW1ncy8yMDIyLTAy/LTIyL3JvYWQtdG8t/cmVhY3QtYmVzdC1i/b29rLmpwZWc";
-  const book2 =
-    "https://imgs.search.brave.com/05H786ZhwN6_kFEXKftJt9XNSVPENOt_O4GnQR1EahI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9uY2Jo/cHVibGlzaGVyLmlu/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzEwLzEwLTEtMzAw/eDQzNi5qcGc";
+  const books = [
+    {
+      image:
+        "https://imgs.search.brave.com/05H786ZhwN6_kFEXKftJt9XNSVPENOt_O4GnQR1EahI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9uY2Jo/cHVibGlzaGVyLmlu/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDI0/LzEwLzEwLTEtMzAw/eDQzNi5qcGc",
+      title: "Physics",
+      price: 785,
+    },
+    {
+      image:
+        "https://imgs.search.brave.com/svHtwW5dXNiMVL-oOFhuFU9X-rMaXZrYUw_vpJdlvng/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGVuZ3VpbnJh/bmRvbWhvdXNlLmNv/bS9jb3Zlci85Nzgw/NzQ0MDgwNDIx",
+      title: "Chemistry",
+      price: 985,
+    },
+    {
+      image:
+        "https://imgs.search.brave.com/6zkF9gprDG9qEX77oZiPbaXlA_vunpzpQ6x2C9hpUDM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ib29rLXRpdGxl/ZC1uYXRpb25hbC1z/Y2llbmNlLWRheS1p/cy1wdXJwbGUtYmFj/a2dyb3VuZF8xMzA0/MzU4LTM3NzUuanBn/P3NlbXQ9YWlzX2h5/YnJpZCZ3PTc0MCZx/PTgw",
+      title: "Maths",
+      price: 685,
+    },
+    {
+      image:
+        "https://imgs.search.brave.com/1275Gv42z6mj3WP_dOiDe4sYCEse-Ede-W59UrcvkY4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9wb3N0ZXItc2Np/ZW5jZS1zY2llbmNl/LXNjaWVuY2Utc2Np/ZW5jZS1zY2llbmNl/XzcwNjQ1Mi0zNzE2/Mi5qcGc_c2VtdD1h/aXNfaHlicmlkJnc9/NzQwJnE9ODA",
+      title: "Biology",
+      price: 1285,
+    },
+    {
+      image:
+        "https://imgs.search.brave.com/V223urAyDuHKd_UImXhtsk-NqdrRze41yep4dQOfzC0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzVkZmQw/MjhhNmFiZDFmMDAw/ODBkYThjNS9tYXN0/ZXIvd18xNjAwLGNf/bGltaXQvU2NpZW5j/ZV9Cb29rc19Hb29k/LXRvLUdvXzk3OC0w/LTM5My0yNTQzMy00/LmpwZw",
+      title: "English",
+      price: 585,
+    },
+    {
+      image:
+        "https://imgs.search.brave.com/V223urAyDuHKd_UImXhtsk-NqdrRze41yep4dQOfzC0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS53aXJlZC5jb20v/cGhvdG9zLzVkZmQw/MjhhNmFiZDFmMDAw/ODBkYThjNS9tYXN0/ZXIvd18xNjAwLGNf/bGltaXQvU2NpZW5j/ZV9Cb29rc19Hb29k/LXRvLUdvXzk3OC0w/LTM5My0yNTQzMy00/LmpwZw",
+      title: "English",
+      price: 585,
+    },
+  ];
+
   return (
     <>
-      <center>
-        {" "}
-        <h1>Book_App</h1>
-      </center>
+    <Header/>
+      
       <div className="headCon">
-        <BookCart book={book1} price={299} rating={3} />
-        <BookCart book={book2} price={199} rating={5} />
-        <BookCart book={book1} price={299} rating={3} />
-        <BookCart book={book2} price={199} rating={5} />
-        <BookCart book={book1} price={299} rating={3} />
-        <BookCart book={book2} price={199} rating={5} />
-        <BookCart book={book1} price={299} rating={3} />
-        <BookCart book={book2} price={199} rating={5} />
+      
+        {books.map((b, i) => 
+          <BookCart key={i} book={b} />
+        )}
       </div>
+      <Footer/>
     </>
   );
 }
