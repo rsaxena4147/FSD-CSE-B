@@ -16,7 +16,7 @@ export default function BookCart({ book }) {
   };
 
   return (
-    <div className="container">
+    <div className="container ">
       {console.log("Enter")}
       <img src={book.image} alt="" />
       <h2>Rating :{book.title}</h2>
