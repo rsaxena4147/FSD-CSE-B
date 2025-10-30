@@ -18,7 +18,7 @@ export default function BookCart({ book }) {
   return (
     <div className="container ">
       {console.log("Enter")}
-      <img src={book.image} alt="" />
+      <img src={book.image } alt="" />
       <h2>Rating :{book.title}</h2>
 
       <h2>Price : {book.price} </h2>
